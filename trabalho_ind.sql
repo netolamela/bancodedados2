@@ -121,6 +121,24 @@ from
 inner join cartao c on
 	u.us_cd_id = c.ct_cd_id ;
 
+select
+	*
+from
+	usuario u
+where
+	us_cd_id <2
+group by
+	us_cd_id
+order by
+	us_tx_nome desc;
+select
+	count (us_cd_id),
+	us_tx_nome
+from
+	usuario
+group by
+	us_tx_nome ;
+
 
 
 

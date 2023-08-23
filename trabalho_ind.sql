@@ -115,11 +115,11 @@ order by
 	us_tx_nome asc ;
 
 select
-	*
+*
 from
-	usuario u
-inner join cartao c on
-	u.us_cd_id = c.ct_cd_id ;
+	usuario u 
+inner join cartao c  on
+	u.us_cd_id <> c.ct_cd_id  order by c.ct_cd_id asc;
 
 select
 	*

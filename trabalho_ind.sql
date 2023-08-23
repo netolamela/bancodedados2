@@ -126,19 +126,17 @@ select
 from
 	usuario u
 where
-	us_cd_id <2
+	us_cd_id <>0
 group by
 	us_cd_id
 order by
-	us_tx_nome desc;
-select
-	count (us_cd_id),
-	us_tx_nome
+	us_cd_id  desc;
+select us_tx_nome,us_tx_cpf 
 from
 	usuario
 group by
-	us_tx_nome ;
-
+	us_cd_id 
+	order by us_tx_nome asc;
 
 
 

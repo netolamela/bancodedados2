@@ -115,11 +115,13 @@ order by
 	us_tx_nome asc ;
 
 select
-*
+	us_tx_nome ,
+	c.ct_int_senha
 from
-	usuario u 
-inner join cartao c  on
-	u.us_cd_id <> c.ct_cd_id  order by c.ct_cd_id asc;
+	usuario u
+inner join cartao c on
+	c.fk_us_cd_id = us_cd_id ;
+
 
 select
 	*
@@ -127,16 +129,22 @@ from
 	usuario u
 where
 	us_cd_id <>0
+
 group by
 	us_cd_id
 order by
-	us_cd_id  desc;
-select us_tx_nome,us_tx_cpf 
+	us_cd_id desc;
+
+select
+	count(us_cd_id),
+	us_tx_cpf
 from
-	usuario
+	usuario u
 group by
-	us_cd_id 
-	order by us_tx_nome asc;
+	us_tx_cpf
+order by
+	u.us_tx_cpf desc ;
+
 
 
 
